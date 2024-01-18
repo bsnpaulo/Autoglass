@@ -13,18 +13,18 @@ namespace Autoglass.Domain.Models
         public int FornecedorId { get; set; }
         public Fornecedor Fornecedor { get; set; } = null!;
 
-        public string ValidarProduto()
+        public static string ValidarProduto(Produto produto)
         {
-            if (this == null)
+            if (produto == null)
                 return "Produto é nulo.";
 
-            if (Situacao?.ToLower() != "a" && Situacao?.ToLower() != "i")
+            if (produto.Situacao?.ToLower() != "a" && produto.Situacao?.ToLower() != "i")
                 return "Situação inválida. Deve ser 'A' ou 'I'.";
 
-            if (DataFabricacao >= DataValidade)
+            if (produto.DataFabricacao >= produto.DataValidade)
                 return "Data de fabricação não pode ser maior ou igual à data de validade.";
 
-            if (FornecedorId <= 0)
+            if (produto.FornecedorId <= 0)
                 return "Informe o codigo do fornecedor";
 
             return null;

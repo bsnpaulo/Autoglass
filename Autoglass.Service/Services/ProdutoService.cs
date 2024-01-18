@@ -27,7 +27,7 @@ namespace Autoglass.Service.Services
         {
             var mapProduto = _mapper.Map<Produto>(produto);
 
-            var validaProduto = mapProduto.ValidarProduto();
+            var validaProduto = Produto.ValidarProduto(mapProduto);
 
             if (!string.IsNullOrEmpty(validaProduto))
                 throw new ApplicationException(validaProduto);
@@ -55,7 +55,9 @@ namespace Autoglass.Service.Services
                 throw new ApplicationException("Produto ñ encontrado.");
 
             var mapProduto = _mapper.Map<Produto>(produto);
-            var validaProduto = mapProduto.ValidarProduto();
+
+            var validaProduto = Produto.ValidarProduto(mapProduto);
+
             if (!string.IsNullOrEmpty(validaProduto))
                 throw new ApplicationException(validaProduto);
 
@@ -90,4 +92,3 @@ namespace Autoglass.Service.Services
         }
     }
 }
-
