@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Remove="Class1.cs" />
+		<Compile Remove="Migrations\20240117174252_MigracaoInicial.cs" />
+		<Compile Remove="Migrations\20240117174252_MigracaoInicial.Designer.cs" />
+		<Compile Remove="Migrations\20240117175320_MigracaoInicial.cs" />
+		<Compile Remove="Migrations\20240117175320_MigracaoInicial.Designer.cs" />
+		<Compile Remove="Migrations\20240117175527_MigracaoInicial.cs" />
+		<Compile Remove="Migrations\20240117175527_MigracaoInicial.Designer.cs" />
+		<Compile Remove="Migrations\20240117193315_migracaoFornecedor.cs" />
+		<Compile Remove="Migrations\20240117193315_migracaoFornecedor.Designer.cs" />
+		<Compile Remove="Migrations\20240117193907_migracaoInicial.cs" />
+		<Compile Remove="Migrations\20240117193907_migracaoInicial.Designer.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Autoglass.Domain\Autoglass.Domain.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.6" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.6">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+	</ItemGroup>
+	<ItemGroup>
+		<None Remove="Migrations\" />
+		<None Remove="Context\" />
+		<None Remove="Repositories\" />
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="Migrations\" />
+		<Folder Include="Context\" />
+		<Folder Include="Repositories\" />
+	</ItemGroup>
+</Project>

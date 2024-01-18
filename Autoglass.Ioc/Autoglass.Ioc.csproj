@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+    <Compile Remove="te.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Autoglass.Data\Autoglass.Data.csproj" />
+    <ProjectReference Include="..\Autoglass.Domain\Autoglass.Domain.csproj" />
+    <ProjectReference Include="..\Autoglass.Service\Autoglass.Service.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+  </ItemGroup>
+</Project>
